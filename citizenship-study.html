@@ -423,9 +423,9 @@ nav.tabs button.active{ color:var(--accent); border-bottom-color:var(--accent); 
 <header class="top">
   <div class="top-inner">
     <div class="brand">
-      <div class="brand-eyebrow" id="brandEyebrow">Hola, mi amor 💕</div>
+      <div class="brand-eyebrow" id="brandEyebrow">Hola, Luzita 💕</div>
       <h1>Your Citizenship Journey <span aria-hidden="true">💗</span></h1>
-      <p>Every question on the 2025 civics test, laid out gently — the way the officer will actually ask. Take your time, mi vida. You've got this.</p>
+      <p>Every question on the 2025 civics test, laid out gently — the way the officer will actually ask. Take your time, my beautiful girl.</p>
     </div>
     <div class="ring-stat">
       <svg id="ringSvg" width="52" height="52" viewBox="0 0 52 52">
@@ -452,7 +452,7 @@ nav.tabs button.active{ color:var(--accent); border-bottom-color:var(--accent); 
   <!-- FLASHCARDS -->
   <section class="view active" id="view-flash">
     <div class="banner">
-      Since <b>October 20, 2025</b>, the officer asks up to <b>20</b> of these 128 questions and you need <b>12</b> right to pass. (If you're 65+ with 20+ years as a permanent resident, it's a shorter 20-question set.) Tap a card to see the answer, then tell it whether it stuck. No rush, mi vida — we go at your pace. 💗
+      Since <b>October 20, 2025</b>, the officer asks up to <b>20</b> of these 128 questions and you need <b>12</b> right to pass. (If you're 65+ with 20+ years as a permanent resident, it's a shorter 20-question set.) Tap a card to see the answer, then tell it whether it stuck. No rush — take it at your pace, my beautiful girl. 💗
     </div>
     <div class="chiprow" id="flashChips"></div>
     <div class="card-stage">
@@ -482,7 +482,7 @@ nav.tabs button.active{ color:var(--accent); border-bottom-color:var(--accent); 
   <!-- QUIZ -->
   <section class="view" id="view-quiz">
     <div class="banner" id="quizIntro">
-      A 20-question mock interview, pulled at random from every section. Get <b>12 of 20</b> and you pass — just like the real thing. Breathe and take your time, mi vida. I know you know this.
+      A 20-question mock interview, pulled at random from every section. Get <b>12 of 20</b> and you pass — just like the real thing. Breathe and take your time, my beautiful girl. I know you know this.
       <div style="margin-top:12px;"><button class="btn-primary" id="btnStartQuiz">Start the practice interview</button></div>
     </div>
     <div id="quizPlay" style="display:none;">
@@ -510,16 +510,16 @@ nav.tabs button.active{ color:var(--accent); border-bottom-color:var(--accent); 
   <!-- SETTINGS -->
   <section class="view" id="view-settings">
     <div class="settings-block">
-      <h3>Your answers, mi vida</h3>
+      <h3>Your answers</h3>
       <div class="settings-grid">
-        <div class="field"><label>State</label><input id="set-state" placeholder="e.g. New York"></div>
-        <div class="field"><label>State capital</label><input id="set-capital" placeholder="e.g. Albany"></div>
-        <div class="field"><label>U.S. Senator #1</label><input id="set-senator1" placeholder="e.g. Chuck Schumer"></div>
-        <div class="field"><label>U.S. Senator #2</label><input id="set-senator2" placeholder="e.g. Kirsten Gillibrand"></div>
-        <div class="field"><label>U.S. Representative</label><input id="set-rep" placeholder="Her congressional district's rep"></div>
-        <div class="field"><label>Governor</label><input id="set-governor" placeholder="Her state's governor"></div>
+        <div class="field"><label>State</label><input id="set-state" placeholder="New York"></div>
+        <div class="field"><label>State capital</label><input id="set-capital" placeholder="Albany"></div>
+        <div class="field"><label>U.S. Senator #1</label><input id="set-senator1" placeholder="Chuck Schumer"></div>
+        <div class="field"><label>U.S. Senator #2</label><input id="set-senator2" placeholder="Kirsten Gillibrand"></div>
+        <div class="field"><label>U.S. Representative</label><input id="set-rep" placeholder="Look up your NYC district at house.gov"></div>
+        <div class="field"><label>Governor</label><input id="set-governor" placeholder="Kathy Hochul"></div>
       </div>
-      <p class="settings-note">These four questions don't have one fixed answer — the officer wants <em>your</em> officials. Fill them in once and they'll show up right everywhere.</p>
+      <p class="settings-note">These questions want <em>your</em> local officials. I've filled in everything for New York City — the only one to add is your <b>U.S. Representative</b>, since it depends on your exact address (look it up at <span class="mono">house.gov/representatives</span>).</p>
     </div>
     <div class="settings-block">
       <h3>Who's in office right now</h3>
@@ -703,7 +703,8 @@ const RAW = [
 const QUESTIONS = RAW.map(r => ({id:r[0], section:r[1], q:r[2], a:r[3], dyn:r[4]}));
 
 const DEFAULT_SETTINGS = {
-  senator1:"", senator2:"", rep:"", governor:"", state:"", capital:"",
+  senator1:"Chuck Schumer", senator2:"Kirsten Gillibrand", rep:"", governor:"Kathy Hochul",
+  state:"New York", capital:"Albany",
   president:"Donald Trump", vp:"JD Vance", speaker:"Mike Johnson", chiefjustice:"John Roberts (Chief Justice)"
 };
 
@@ -720,6 +721,10 @@ function saveStore(){
 }
 let store = loadStore();
 store.settings = {...DEFAULT_SETTINGS, ...store.settings};
+// Any field left blank falls back to the baked-in default (keeps the NYC answers permanent)
+for(const k in DEFAULT_SETTINGS){
+  if(!store.settings[k]) store.settings[k] = DEFAULT_SETTINGS[k];
+}
 store.mastered = store.mastered || {};
 
 function resolvedAnswer(question){
@@ -925,7 +930,7 @@ function finishQuiz(){
   const passed = quizCorrectCount >= 12;
   let html = '<div class="result-card '+(passed?'pass':'fail')+'">';
   html += '<div class="score mono">'+quizCorrectCount+' / '+quizSet.length+'</div>';
-  html += '<div class="verdict">'+(passed ? "That's a passing score, mi amor — you're so ready 💖" : "Not quite 12 yet — one more round, mi vida. You're closer than you think. 💪")+'</div>';
+  html += '<div class="verdict">'+(passed ? "That's a passing score, my beautiful girl — you're so ready 💖" : "Not quite 12 yet — one more round, my beautiful girl. You're closer than you think. 💪")+'</div>';
   if(quizMissed.length){
     html += '<div class="missed-list"><h3 style="font-family:\'Fraunces\',Georgia,serif;font-style:italic;font-size:18px;color:var(--accent-2);margin-bottom:8px;">Let\'s go over these together 💕</h3>';
     quizMissed.forEach(item=>{
@@ -991,7 +996,7 @@ function wireSettingsForm(){
   });
 }
 document.getElementById('btnResetProgress').addEventListener('click', ()=>{
-  if(!confirm('Start your progress over, mi vida? Your saved officials will stay. 💗')) return;
+  if(!confirm('Start your progress over? Your saved officials will stay. 💗')) return;
   store.mastered = {};
   saveStore();
   renderChips();
@@ -1001,7 +1006,7 @@ document.getElementById('btnResetProgress').addEventListener('click', ()=>{
 
 /* ---------- Sweet nothings ---------- */
 const PET_NAMES = ["Luzita","Bebecita","Boobita","Sexicita","Pussita"];
-const GREETINGS = ["Hola","Te amo","Hola","Te amo","Hola"];
+const GREETINGS = ["Hola","Hey","Hola","Hey beautiful","Hola"];
 (function rotatePetName(){
   let i = 0;
   try{
