@@ -516,10 +516,10 @@ nav.tabs button.active{ color:var(--accent); border-bottom-color:var(--accent); 
         <div class="field"><label>State capital</label><input id="set-capital" placeholder="Albany"></div>
         <div class="field"><label>U.S. Senator #1</label><input id="set-senator1" placeholder="Chuck Schumer"></div>
         <div class="field"><label>U.S. Senator #2</label><input id="set-senator2" placeholder="Kirsten Gillibrand"></div>
-        <div class="field"><label>U.S. Representative</label><input id="set-rep" placeholder="Look up your NYC district at house.gov"></div>
+        <div class="field"><label>U.S. Representative</label><input id="set-rep" placeholder="Gregory W. Meeks"></div>
         <div class="field"><label>Governor</label><input id="set-governor" placeholder="Kathy Hochul"></div>
       </div>
-      <p class="settings-note">These questions want <em>your</em> local officials. I've filled in everything for New York City — the only one to add is your <b>U.S. Representative</b>, since it depends on your exact address (look it up at <span class="mono">house.gov/representatives</span>).</p>
+      <p class="settings-note">These questions want <em>your</em> local officials — I've filled them all in for us here in New York City. Change any of them here if you ever need to.</p>
     </div>
     <div class="settings-block">
       <h3>Who's in office right now</h3>
@@ -703,7 +703,7 @@ const RAW = [
 const QUESTIONS = RAW.map(r => ({id:r[0], section:r[1], q:r[2], a:r[3], dyn:r[4]}));
 
 const DEFAULT_SETTINGS = {
-  senator1:"Chuck Schumer", senator2:"Kirsten Gillibrand", rep:"", governor:"Kathy Hochul",
+  senator1:"Chuck Schumer", senator2:"Kirsten Gillibrand", rep:"Gregory W. Meeks", governor:"Kathy Hochul",
   state:"New York", capital:"Albany",
   president:"Donald Trump", vp:"JD Vance", speaker:"Mike Johnson", chiefjustice:"John Roberts (Chief Justice)"
 };
