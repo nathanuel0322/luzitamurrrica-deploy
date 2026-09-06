@@ -233,6 +233,41 @@ main{ padding-top:26px; }
 @media (prefers-reduced-motion:no-preference){
   .flashcard, .opt, .chip{ transition:border-color .15s ease, background-color .15s ease; }
 }
+
+/* Readability pass: larger, more legible type across the app */
+body{ font-size:17px; line-height:1.6; }
+.brand h1{ font-size:26px; }
+.brand p{ font-size:15px; max-width:52ch; }
+.tab-btn{ font-size:15.5px; }
+.helper{ font-size:15px; line-height:1.6; }
+.chip{ font-size:14px; }
+.chip .pct{ font-size:12.5px; }
+.flashcard .tag, .quiz-card .tag, .browse-item .num{ font-size:12.5px; }
+.flashcard .q{ font-size:24px; line-height:1.45; }
+.flashcard .a{ font-size:19px; line-height:1.6; }
+.card-actions button{ font-size:15.5px; }
+.ghost-btn{ font-size:13.5px; }
+.quiz-card .q{ font-size:22px; }
+.opt{ font-size:16.5px; line-height:1.5; }
+.btn-primary, .danger-btn{ font-size:15px; }
+.result-card .verdict{ font-size:17px; }
+.missed-item{ font-size:15px; }
+.browse-search{ font-size:15.5px; }
+.browse-section h3{ font-size:14px; }
+.browse-item .q{ font-size:16px; }
+.browse-item .a{ font-size:15px; }
+.field label{ font-size:13px; }
+.field input, .field select{ font-size:15.5px; }
+.settings-note, .save-note{ font-size:13.5px; }
+
+@media (max-width:640px){
+  body{ font-size:17.5px; }
+  .brand h1{ font-size:24px; }
+  .flashcard .q{ font-size:23px; }
+  .flashcard .a{ font-size:18.5px; }
+  .quiz-card .q{ font-size:21px; }
+  .opt{ font-size:17px; }
+}
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
