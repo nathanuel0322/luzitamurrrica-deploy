@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Naturalization Study Companion</title>
+<title>Luzita's Citizenship Journey 💗</title>
 <style>
 :root{
   --ground:#F7F4EC;
@@ -268,16 +268,163 @@ body{ font-size:19px; line-height:1.65; }
   .quiz-card .q{ font-size:23px; }
   .opt{ font-size:19px; }
 }
+
+/* ===== Made-with-love pass: soft, warm, pink, hers ===== */
+:root{
+  --ground:#FFF4F8;
+  --surface:#FFFFFF;
+  --surface-2:#FCE3EE;
+  --ink:#4C2A3A;
+  --ink-soft:#9E6980;
+  --accent:#E25C93;
+  --accent-ink:#FFFFFF;
+  --accent-2:#B063A0;
+  --line:#F6D2E1;
+  --danger:#D8726B;
+  --danger-soft:#FBE6E3;
+  --good-soft:#F9DEEC;
+  --heart:#E25C93;
+  --shadow:0 2px 8px rgba(226,92,147,.10), 0 18px 44px -18px rgba(226,92,147,.32);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#1E1219;
+    --surface:#2B1B26;
+    --surface-2:#3B2434;
+    --ink:#FBE7F0;
+    --ink-soft:#D0A2B7;
+    --accent:#F58AB6;
+    --accent-ink:#2A1020;
+    --accent-2:#E9B6D6;
+    --line:#472E3E;
+    --danger:#E9A79E;
+    --danger-soft:#3E2626;
+    --good-soft:#3A2431;
+    --heart:#F58AB6;
+    --shadow:0 2px 8px rgba(0,0,0,.35), 0 18px 44px -18px rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#1E1219; --surface:#2B1B26; --surface-2:#3B2434;
+  --ink:#FBE7F0; --ink-soft:#D0A2B7; --accent:#F58AB6; --accent-ink:#2A1020;
+  --accent-2:#E9B6D6; --line:#472E3E; --danger:#E9A79E; --danger-soft:#3E2626;
+  --good-soft:#3A2431; --heart:#F58AB6;
+  --shadow:0 2px 8px rgba(0,0,0,.35), 0 18px 44px -18px rgba(0,0,0,.55);
+}
+
+body{
+  font-family:"Nunito", ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(1100px 520px at 10% -10%, rgba(226,92,147,.16), transparent 60%),
+    radial-gradient(900px 520px at 100% 0%, rgba(176,99,160,.13), transparent 55%),
+    var(--ground);
+}
+h1,h2,h3,.serif{
+  font-family:"Fraunces", "Source Serif 4", Georgia, serif;
+  font-optical-sizing:auto;
+}
+.mono{ font-family:"Nunito", ui-sans-serif, system-ui, sans-serif; letter-spacing:0; }
+
+header.top{
+  background:linear-gradient(180deg, var(--surface), color-mix(in srgb, var(--surface) 86%, var(--accent)));
+  border-bottom:1px solid var(--line);
+}
+.brand-eyebrow{
+  font-family:"Fraunces", Georgia, serif;
+  text-transform:none; letter-spacing:.005em; font-style:italic;
+  font-size:16px; font-weight:500; color:var(--accent);
+}
+.brand h1{ color:var(--ink); font-weight:600; letter-spacing:-.01em; line-height:1.1; }
+@media (max-width:640px){ .brand h1{ font-size:25px; } }
+.brand p{ color:var(--ink-soft); }
+.ring-num .n{ font-family:"Fraunces", Georgia, serif; color:var(--accent); }
+.ring-num .l{ color:var(--ink-soft); }
+.ring-num .l::after{ content:" \2665"; color:var(--heart); }
+
+nav.tabs button{ border-radius:12px 12px 0 0; }
+nav.tabs button.active{ color:var(--accent); border-bottom-color:var(--accent); }
+
+.banner{
+  background:linear-gradient(180deg, var(--surface-2), color-mix(in srgb, var(--surface-2) 68%, var(--surface)));
+  border:1px solid var(--line); border-radius:18px; color:var(--ink-soft);
+}
+.banner b{ color:var(--accent); }
+
+.chip{ border-radius:999px; }
+.chip.active{
+  background:linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 76%, #7d3560));
+  border-color:transparent; color:#fff;
+  box-shadow:0 5px 16px -5px rgba(226,92,147,.55);
+}
+
+.flashcard{
+  border-radius:24px; border:1px solid var(--line);
+  background:
+    radial-gradient(440px 200px at 100% 0%, rgba(226,92,147,.09), transparent 70%),
+    var(--surface);
+}
+.flashcard .tag,
+.quiz-card .tag,
+.browse-section h3,
+.settings-block h3{
+  font-family:"Fraunces", Georgia, serif; font-style:italic;
+  text-transform:none; letter-spacing:0; color:var(--accent-2); font-weight:500;
+}
+.flashcard .hint{ font-style:italic; }
+.flashcard .hint::after{ content:" \1F497"; }
+
+.card-actions button{ border-radius:16px; }
+.card-actions .know{
+  background:linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 78%, #7d3560));
+  border-color:transparent; color:#fff;
+}
+.card-actions .know:hover{ color:#fff; filter:brightness(1.05); }
+.ghost-btn{ border-radius:999px; }
+
+.bar-fill{ background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+.quiz-card{ border-radius:24px; }
+.opt{ border-radius:16px; }
+.opt:hover{ border-color:var(--accent); }
+.opt.correct{ border-color:var(--accent); background:var(--good-soft); }
+.btn-primary{
+  border-radius:999px;
+  background:linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 76%, #7d3560));
+  box-shadow:0 7px 20px -7px rgba(226,92,147,.6);
+}
+.result-card{ border-radius:26px; }
+.result-card .score{ font-family:"Fraunces", Georgia, serif; color:var(--accent); }
+.result-card .verdict{ color:var(--accent); }
+
+.browse-section h3{ font-size:19px; }
+.browse-item .num{ color:var(--accent-2); font-family:"Nunito", sans-serif; }
+.browse-search{ border-radius:16px; }
+
+.settings-block h3{ font-size:19px; }
+.field input, .field select{ border-radius:13px; }
+.field label{ color:var(--ink-soft); }
+.danger-btn{ border-radius:999px; }
+
+/* Love note */
+.love-note{
+  margin-top:44px; padding:34px 24px 8px; text-align:center;
+  border-top:1px solid var(--line);
+}
+.love-note .hearts{ font-size:20px; letter-spacing:8px; margin-bottom:12px; }
+.love-note p{ margin:4px 0; color:var(--ink-soft); font-size:16px; line-height:1.6; }
+.love-note .signed{
+  margin-top:12px; font-family:"Fraunces", Georgia, serif; font-style:italic;
+  font-size:23px; color:var(--accent); font-weight:500;
+}
 </style>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Nunito:wght@400;600;700;800&family=Source+Serif+4:wght@600;700&display=swap">
 
 <header class="top">
   <div class="top-inner">
     <div class="brand">
-      <div class="brand-eyebrow">N-400 Civics &amp; History</div>
-      <h1>Naturalization Study Companion</h1>
-      <p>All 128 questions from the 2025 USCIS civics test, organized the way the officer will actually ask them.</p>
+      <div class="brand-eyebrow" id="brandEyebrow">Hola, mi amor 💕</div>
+      <h1>Your Citizenship Journey <span aria-hidden="true">💗</span></h1>
+      <p>Every question on the 2025 civics test, laid out gently — the way the officer will actually ask. Take your time, mi vida. You've got this.</p>
     </div>
     <div class="ring-stat">
       <svg id="ringSvg" width="52" height="52" viewBox="0 0 52 52">
@@ -304,7 +451,7 @@ body{ font-size:19px; line-height:1.65; }
   <!-- FLASHCARDS -->
   <section class="view active" id="view-flash">
     <div class="banner">
-      Since <b>October 20, 2025</b>, USCIS asks up to <b>20</b> of these 128 questions at the interview and requires <b>12</b> correct to pass. (Applicants 65+ with 20+ years as a permanent resident study a shorter 20-question set instead.) Tap a card to reveal the answer, then mark whether it stuck.
+      Since <b>October 20, 2025</b>, the officer asks up to <b>20</b> of these 128 questions and you need <b>12</b> right to pass. (If you're 65+ with 20+ years as a permanent resident, it's a shorter 20-question set.) Tap a card to see the answer, then tell it whether it stuck. No rush, mi vida — we go at your pace. 💗
     </div>
     <div class="chiprow" id="flashChips"></div>
     <div class="card-stage">
@@ -319,14 +466,14 @@ body{ font-size:19px; line-height:1.65; }
         <div class="hint">click to flip</div>
       </div>
       <div class="card-actions">
-        <button class="learning" id="btnLearning">Still learning</button>
-        <button class="know" id="btnKnow">Got it ✓</button>
+        <button class="learning" id="btnLearning">Still learning 💭</button>
+        <button class="know" id="btnKnow">Got it! 💖</button>
       </div>
       <div class="card-controls">
         <button class="ghost-btn" id="btnShuffle">Shuffle</button>
         <button class="ghost-btn" id="btnPrev">← Prev</button>
         <button class="ghost-btn" id="btnNext">Next →</button>
-        <button class="ghost-btn" id="btnUnlearned">Only unmastered</button>
+        <button class="ghost-btn" id="btnUnlearned">Only the tricky ones</button>
       </div>
     </div>
   </section>
@@ -334,8 +481,8 @@ body{ font-size:19px; line-height:1.65; }
   <!-- QUIZ -->
   <section class="view" id="view-quiz">
     <div class="banner" id="quizIntro">
-      A 20-question mock interview, drawn at random across every section, in the real multiple-choice-free style translated into multiple choice for self-testing. You need <b>12 of 20</b> right to pass — same as the real test.
-      <div style="margin-top:12px;"><button class="btn-primary" id="btnStartQuiz">Start practice interview</button></div>
+      A 20-question mock interview, pulled at random from every section. Get <b>12 of 20</b> and you pass — just like the real thing. Breathe and take your time, mi vida. I know you know this.
+      <div style="margin-top:12px;"><button class="btn-primary" id="btnStartQuiz">Start the practice interview</button></div>
     </div>
     <div id="quizPlay" style="display:none;">
       <div class="quiz-progress">
@@ -362,7 +509,7 @@ body{ font-size:19px; line-height:1.65; }
   <!-- SETTINGS -->
   <section class="view" id="view-settings">
     <div class="settings-block">
-      <h3>Her personal answers</h3>
+      <h3>Your answers, mi vida</h3>
       <div class="settings-grid">
         <div class="field"><label>State</label><input id="set-state" placeholder="e.g. New York"></div>
         <div class="field"><label>State capital</label><input id="set-capital" placeholder="e.g. Albany"></div>
@@ -371,29 +518,36 @@ body{ font-size:19px; line-height:1.65; }
         <div class="field"><label>U.S. Representative</label><input id="set-rep" placeholder="Her congressional district's rep"></div>
         <div class="field"><label>Governor</label><input id="set-governor" placeholder="Her state's governor"></div>
       </div>
-      <p class="settings-note">These four questions have no fixed answer — USCIS wants <em>her</em> officials. Fill them in once and they'll appear correctly everywhere in the app.</p>
+      <p class="settings-note">These four questions don't have one fixed answer — the officer wants <em>your</em> officials. Fill them in once and they'll show up right everywhere.</p>
     </div>
     <div class="settings-block">
-      <h3>Current office holders</h3>
+      <h3>Who's in office right now</h3>
       <div class="settings-grid">
         <div class="field"><label>President</label><input id="set-president" placeholder="President"></div>
         <div class="field"><label>Vice President</label><input id="set-vp" placeholder="Vice President"></div>
         <div class="field"><label>Speaker of the House</label><input id="set-speaker" placeholder="Speaker of the House"></div>
         <div class="field"><label>Chief Justice</label><input id="set-chiefjustice" placeholder="Chief Justice"></div>
       </div>
-      <p class="settings-note">Pre-filled as of September 2026 — double-check these on <span class="mono">uscis.gov</span> the week of her interview, since they can change.</p>
+      <p class="settings-note">Filled in as of September 2026 — give these a quick check on <span class="mono">uscis.gov</span> the week of your interview, just in case.</p>
     </div>
     <div class="settings-block">
-      <h3>Data</h3>
+      <h3>Your progress</h3>
       <div class="reset-row">
-        <button class="danger-btn" id="btnResetProgress">Reset all progress</button>
+        <button class="danger-btn" id="btnResetProgress">Start over</button>
       </div>
-      <p class="settings-note">Progress and these answers are saved only on this device, in this browser.</p>
+      <p class="settings-note">Everything's saved right here on your device — nobody else sees it. 💗</p>
     </div>
     <div class="save-note" id="saveNote"></div>
   </section>
 
 </main>
+
+<footer class="love-note">
+  <div class="hearts" aria-hidden="true">💗 💕 💗</div>
+  <p>Every card in here was set up for you, with love.</p>
+  <p>A little each day and you'll walk in ready. I'm so proud of you already.</p>
+  <p class="signed">— from your tall king 👑</p>
+</footer>
 </div>
 
 <script>
@@ -770,15 +924,15 @@ function finishQuiz(){
   const passed = quizCorrectCount >= 12;
   let html = '<div class="result-card '+(passed?'pass':'fail')+'">';
   html += '<div class="score mono">'+quizCorrectCount+' / '+quizSet.length+'</div>';
-  html += '<div class="verdict">'+(passed ? 'Passing score — nice work' : 'Below the 12-correct pass line — worth another round')+'</div>';
+  html += '<div class="verdict">'+(passed ? "That's a passing score, mi amor — you're so ready 💖" : "Not quite 12 yet — one more round, mi vida. You're closer than you think. 💪")+'</div>';
   if(quizMissed.length){
-    html += '<div class="missed-list"><h3 style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px;">Review these</h3>';
+    html += '<div class="missed-list"><h3 style="font-family:\'Fraunces\',Georgia,serif;font-style:italic;font-size:18px;color:var(--accent-2);margin-bottom:8px;">Let\'s go over these together 💕</h3>';
     quizMissed.forEach(item=>{
       html += '<div class="missed-item"><div class="q">'+item.q+'</div><div class="a">'+resolvedAnswer(item)+'</div></div>';
     });
     html += '</div>';
   }
-  html += '<div style="margin-top:24px;"><button class="btn-primary" id="btnRetry">Take another practice interview</button></div>';
+  html += '<div style="margin-top:24px;"><button class="btn-primary" id="btnRetry">One more round</button></div>';
   html += '</div>';
   result.innerHTML = html;
   document.getElementById('btnRetry').addEventListener('click', ()=>{
@@ -836,13 +990,26 @@ function wireSettingsForm(){
   });
 }
 document.getElementById('btnResetProgress').addEventListener('click', ()=>{
-  if(!confirm('Clear all mastery progress on this device? Your saved senators/officials stay put.')) return;
+  if(!confirm('Start your progress over, mi vida? Your saved officials will stay. 💗')) return;
   store.mastered = {};
   saveStore();
   renderChips();
   updateHeaderStat();
   buildFlashDeck();
 });
+
+/* ---------- Sweet nothings ---------- */
+const PET_NAMES = ["Luzita","Bebecita","Boobita","Sexicita","Pussita"];
+const GREETINGS = ["Hola","Te amo","Hola","Te amo","Hola"];
+(function rotatePetName(){
+  let i = 0;
+  try{
+    i = (parseInt(localStorage.getItem("petname-i")||"-1",10) + 1) % PET_NAMES.length;
+    localStorage.setItem("petname-i", String(i));
+  }catch(e){ i = Math.floor(Math.random()*PET_NAMES.length); }
+  const el = document.getElementById('brandEyebrow');
+  if(el) el.textContent = GREETINGS[i] + ', ' + PET_NAMES[i] + ' 💕';
+})();
 
 /* ---------- Init ---------- */
 renderChips();
